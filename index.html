@@ -1,0 +1,39 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Подписка на продукцию ИД РБК</title>
+<script type="text/javascript" src="jquery-1.7.2.min.js"></script>
+<script type="text/javascript" src="jquery.uploader.js"></script>
+<script type="text/javascript">
+$(function(){
+$( '#but' ).click( function() {
+console.log( 123 );
+$.ajaxFileUpload({
+	url: 'upload.php',
+	secureuri: false,
+	fileElementId: 'img',
+	dataType: 'json',
+	data:{
+	    test: 'fest'
+	    , pest : 'test'
+	    , hest : 'zavest'
+	},
+	success: function (data, status){
+		console.log( data, status );
+	},
+	error: function (data, status, err ){
+		console.log( data, status, err );
+	}
+});
+});
+});
+</script>
+</head>
+<body>
+	<form>
+		<input type="file" name="img" id="img" />
+		<a href="#" id="but" name="but">click</a>
+	</form>
+</body>
+</html>
